@@ -28,6 +28,7 @@ This is project has not been tested in a server having more than 3 players. Henc
 ## Feature List
 
 * Disabling PK in a particular map.
+* Announcing player kills.
 
 ## Pre-compiled DLL
 
