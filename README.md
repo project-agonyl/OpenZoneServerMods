@@ -23,6 +23,7 @@ This is project has not been tested in a server having more than 3 players. Henc
 * Clone/Download the project.
 * Build the solution using Visual Studio 2017.
 * Inject OpenZoneServerMods.dll into your ZoneServer.exe process using your favourite DLL injection tool such as DLLInjector or Extreme Injector.
+* On successful injection you should able to see debug messages n your ZoneServer from the DLL.
 
 ## Feature List
 

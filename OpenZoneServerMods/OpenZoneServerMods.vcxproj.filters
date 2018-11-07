@@ -24,13 +24,13 @@
     <ClInclude Include="DisablePK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="detours\detours.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="detours\detver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="detours\syelog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detours\detours.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
