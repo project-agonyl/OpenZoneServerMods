@@ -1,4 +1,4 @@
-# Opensource Modifications for A3 Online ZoneServe.exe
+# Opensource Modifications for A3 Online ZoneServer.exe
 
 We all know how hard it is to implement a feature into the exisiting ZoneServer.exe for which we do not have the source. 
 This project aims to make modifying ZoneServer.exe a bit less of a hassle. 
