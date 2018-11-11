@@ -7,7 +7,7 @@ int __fastcall HookedKilledByPC(void* pThis, DWORD EDX, void *a2)
 {
 	std::string killer((char *)a2 + 32), killed((char *)pThis + 32);
 	std::string pkShout = killer + " killed " + killed + " at map " + std::to_string(*((WORD *)pThis + 42));
-	ServerAnnouncement(pkShout.c_str());
+	InGameShout("[PK-Shout]", pkShout.c_str());
 	return KilledByPC(pThis, a2);
 }
 
