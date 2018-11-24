@@ -8,14 +8,17 @@ const int PKDisabledMaps[MAX_PK_DISABLED_MAPS] = { 7 };
 
 int __fastcall HookedIsEnabled2PK(void* pThis, DWORD EDX, USHORT level, int unknown)
 {
-	// Retrieve current map ID of the player
-	WORD mapID = *((WORD *)pThis + 42);
-	for (size_t i = 0; i < MAX_PK_DISABLED_MAPS; i++)
-	{
-		// If current mapID matches the one that has to be disabled then return 0 to disable PK
-		if (PKDisabledMaps[i] == mapID)
+	int EnablePKDisable = GetPrivateProfileInt(L"MODULES", L"EnablePKDisable", 0, L".\\OpenZoneServerMods.ini");
+	if (EnablePKDisable == 1) {
+		// Retrieve current map ID of the player
+		WORD mapID = *((WORD *)pThis + 42);
+		for (size_t i = 0; i < MAX_PK_DISABLED_MAPS; i++)
 		{
-			return 0;
+			// If current mapID matches the one that has to be disabled then return 0 to disable PK
+			if (PKDisabledMaps[i] == mapID)
+			{
+				return 0;
+			}
 		}
 	}
 	// Call the original function so that PK in other maps work normally

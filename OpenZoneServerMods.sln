@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E4A4822E-907D-42BA-9261-7DFF6A8D11C1}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
+		OpenZoneServerMods\OpenZoneServerMods.ini = OpenZoneServerMods\OpenZoneServerMods.ini
 	EndProjectSection
 EndProject
 Global
