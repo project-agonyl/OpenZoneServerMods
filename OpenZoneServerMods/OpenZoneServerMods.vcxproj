@@ -156,6 +156,7 @@
     <ClInclude Include="detours\syelog.h" />
     <ClInclude Include="DisablePK.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="LevelCap.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="DisablePK.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="LevelCap.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

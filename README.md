@@ -30,6 +30,7 @@ This is project has not been tested in a server having more than 3 players. Henc
 
 * Disabling PK in a particular map.
 * Announcing player kills.
+* Adding level cap(Once the level cap has been reached the player stops receiving hunting exp from monsters)
 
 ## Pre-compiled DLL
 
