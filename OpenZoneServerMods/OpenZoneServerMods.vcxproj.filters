@@ -45,6 +45,12 @@
     <ClInclude Include="LevelCap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MercenaryLevelUp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveShueRestrictions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -63,6 +69,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LevelCap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MercenaryLevelUp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveShueRestrictions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

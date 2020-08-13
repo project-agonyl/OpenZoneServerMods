@@ -11,22 +11,22 @@ struct MainServerShoutPacket
 	char strMessage[64];
 };
 
-void ZoneServerPrint(const char *msg)
+void ZoneServerPrint(const char* msg)
 {
 	// Calling original Print function from the ZoneServer
 	((int(__cdecl*)(const char* string))0x00435EC0)(msg);
 }
 
-void ServerAnnouncement(const char *msg)
+void ServerAnnouncement(const char* msg)
 {
 	// Calling original ShoutNotice function from the ZoneServer
 	((int(__cdecl*)(const char* string))0x0047A6A0)(msg);
 }
 
-void InGameShout(const char *name, const char *msg)
+void InGameShout(const char* name, const char* msg)
 {
 	struct MainServerShoutPacket myPkt;
-	void *MainServer = (void *)0x0072BF10;
+	void* MainServer = (void*)0x0072BF10;
 	myPkt.type = 0xA101u;
 	myPkt.PCID = 0x0074u;
 	int bytes[5] = { 241, 173, 32, 0, 0 };
@@ -35,5 +35,27 @@ void InGameShout(const char *name, const char *msg)
 	strcpy(myPkt.strName, name);
 	myPkt.strUnk[0] = 0;
 	strncpy(myPkt.strMessage, msg, 64u);
-	((int(__thiscall*)(void *baseServer, void *packet, size_t size))0x004057CC)(MainServer, &myPkt, sizeof(struct MainServerShoutPacket));
+	((int(__thiscall*)(void* baseServer, void* packet, size_t size))0x004057CC)(MainServer, &myPkt, sizeof(struct MainServerShoutPacket));
+}
+
+bool Hook(void* toHook, void* ourFunc, int len) {
+	if (len < 5)
+	{
+		return false;
+	}
+
+	DWORD curProtection;
+	VirtualProtect(toHook, len, PAGE_EXECUTE_READWRITE, &curProtection);
+
+	memset(toHook, 0x90, len);
+
+	DWORD relativeAddress = ((DWORD)ourFunc - (DWORD)toHook) - 5;
+
+	*(BYTE*)toHook = 0xE9;
+	*(DWORD*)((DWORD)toHook + 1) = relativeAddress;
+
+	DWORD temp;
+	VirtualProtect(toHook, len, curProtection, &temp);
+
+	return true;
 }
